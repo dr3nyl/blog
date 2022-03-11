@@ -6,7 +6,7 @@
         <h1>{{ $post->title; }}</h1>
 
         <p>
-        by  <a href="http://">Drenyl Pomarejo </a> in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+        by  <a href="http://">{{ $post->user->name }}</a> in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
         </p>
         
         <div>
