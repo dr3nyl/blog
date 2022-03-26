@@ -14,6 +14,33 @@ class Post extends Model
    protected $guarded = ['id'];
 
 
+   public function scopeFilter($query, array $filters)
+   {
+
+        if (isset($filters['search'])) {
+
+            $query->when($filters['search'], function ($query, $search) {
+
+                $query
+                    ->where('title', 'like', '%'. $search .'%')
+                    ->orWhere('body', 'like', '%'. $search .'%');
+            });
+        }
+        
+       if (isset($filters['category'])) {
+
+            $query->when($filters['category'], fn($query, $category) => 
+
+                $query->whereHas('category', fn($query) =>
+                
+                    $query->where('slug', $category)
+                )
+            );
+
+        }
+      
+   }
+
    public function category()
    {
 
