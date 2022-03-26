@@ -19,12 +19,13 @@ class Post extends Model
 
         if (isset($filters['search'])) {
 
-            $query->when($filters['search'], function ($query, $search) {
+            $query->when($filters['search'], fn ($query, $search) =>
 
+                $query->where(fn($query) => 
                 $query
                     ->where('title', 'like', '%'. $search .'%')
-                    ->orWhere('body', 'like', '%'. $search .'%');
-            });
+                    ->orWhere('body', 'like', '%'. $search .'%'))
+            );
         }
         
        if (isset($filters['category'])) {
