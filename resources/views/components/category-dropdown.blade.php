@@ -24,7 +24,7 @@
 
     @foreach ($categories as $category)
 
-    <x-dropdown-item href="/?category={{ $category->slug}}">{{ $category->name}}</x-dropdown-item>
-        <!-- {{ isset($currentCategory) && $category->is($currentCategory) ? 'bg-blue-500 text-white' :  ''}} -->
+    <x-dropdown-item href="/?category={{ $category->slug}} & {{ http_build_query(request()->except('category')) }}">{{ $category->name}}</x-dropdown-item>
+        
     @endforeach
 </x-dropdown>
