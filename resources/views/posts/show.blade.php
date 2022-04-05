@@ -54,8 +54,9 @@
 
                 <section class="col-span-8 col-start-5 mt-10 space-y-6">
                 
+                @auth
                     <x-panel>
-                        <form action="" method="post" > 
+                        <form action="/posts/{{ $post->slug }}/comments" method="post" > 
                             @csrf
 
                             <header class="flex items-center">
@@ -73,6 +74,13 @@
                         
                         </form>
                     </x-panel>
+
+                @else
+
+                    <p class="font-semibold">
+                        <a href="/register" class="hover:underline">Register</a> or <a href="/login" class="hover:underline">Login</a> to leave a comment
+                    </p>
+                @endauth
 
                     @foreach( $post->comments as $comment)
 
