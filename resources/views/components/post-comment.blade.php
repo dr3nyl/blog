@@ -11,7 +11,7 @@
 
             <p class="text-xs">
                 Posted
-                <time>{{ $comment->created_at }}</time>
+                <time>{{ $comment->created_at->diffForhumans() }}</time>
             </p>
         </header>
 
