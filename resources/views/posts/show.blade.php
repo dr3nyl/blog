@@ -65,7 +65,7 @@
                             </header>
 
                             <div class="mt-6">
-                                <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5" placeholder="Say something?"></textarea>
+                                <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" rows="5" placeholder="Say something?" required></textarea>
                             </div>
 
                             <div class="flex justify-end mt-6 pt-6 border-t border-gray-200">
