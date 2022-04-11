@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PostController extends Controller
 {
@@ -15,8 +16,8 @@ class PostController extends Controller
         return view('posts.index', [
         
             'posts' => Post::latest()
-                            ->filter(request(['search', 'category', 'author']))
-                            ->paginate(6)->withQueryString()
+                     ->filter(request(['search', 'category', 'author']))
+                     ->paginate(6)->withQueryString()
         ]);
     }
 
@@ -32,6 +33,25 @@ class PostController extends Controller
     public function create()
     {
         return view('posts.create');
+    }
+
+    public function store()
+    {
+        
+       $attribute = request()->validate([
+
+            'title' => 'required',
+            'slug' => ['required', Rule::unique('posts', 'slug')],
+            'excerpt' => 'required',
+            'body' => 'required',
+            'category_id' => ['required', Rule::exists('categories', 'id')]
+        ]);
+
+        $attribute['user_id'] = auth()->id();
+
+        Post::create($attribute);
+
+        return redirect('/');
     }
     
 }
