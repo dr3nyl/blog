@@ -18,7 +18,7 @@ class MustBeAdministrator
     public function handle(Request $request, Closure $next)
     {
 
-        if (auth()->user()->username != 'fapgaming')
+        if ( auth()->guest() OR auth()->user()->username != 'fapgaming')
         {
             abort(Response::HTTP_FORBIDDEN);
         }
