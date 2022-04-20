@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\NewsLetterController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
@@ -31,6 +32,10 @@ Route::get('/', [PostController::class, 'index']);
  
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
+Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store'])->middleware('auth');
+
+Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+
 Route::middleware(['guest'])->group( function(){    
 
     Route::get('register', [RegisterController::class, 'create']);
@@ -39,10 +44,12 @@ Route::middleware(['guest'])->group( function(){
     Route::post('login', [SessionController::class, 'store']);
 });
 
-Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store'])->middleware('auth');
+Route::middleware(['admin'])->group( function(){
 
-Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
-
-Route::get('/admin/posts/create', [PostController::class, 'create'])->middleware('admin');
-
-Route::post('/admin/posts', [PostController::class, 'store'])->middleware('admin');
+    Route::get('/admin/posts/create', [AdminController::class, 'create']);
+    Route::post('/admin/posts', [AdminController::class, 'store']);
+    Route::get('/admin/posts', [AdminController::class, 'index']);
+    Route::get('/admin/posts/{post}/edit', [AdminController::class, 'edit']);
+    Route::patch('/admin/posts/{post}', [AdminController::class, 'update']);
+    Route::delete('/admin/posts/{post}', [AdminController::class, 'destroy']);
+});
