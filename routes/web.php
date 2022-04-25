@@ -44,7 +44,7 @@ Route::middleware(['guest'])->group( function(){
     Route::post('login', [SessionController::class, 'store']);
 });
 
-Route::middleware(['admin'])->group( function(){
+Route::middleware(['can:admin'])->group( function(){
 
     Route::get('/admin/posts/create', [AdminController::class, 'create']);
     Route::post('/admin/posts', [AdminController::class, 'store']);
