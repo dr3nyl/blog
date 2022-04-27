@@ -5,13 +5,24 @@
 
                 <x-form.input name="title"/>
 
-                <x-form.input name="slug" />
+                <x-form.input name="slug" value="{{old('slug')}}"/>
                 
+                <x-form.field>
+                    <x-form.label name="status" />
+
+                    <select name="status" id="status">
+                        <option value="Draft" {{ old('status') == 'Draft' ? 'selected' : '' }} >Draft</option>
+                        <option value="Published" {{ old('status') == 'Published' ? 'selected' : '' }}>Published</option>
+                    </select>
+
+                    <x-form.error name="status"/>
+                </x-form.field>
+
                 <x-form.input name="thumbnail" type="file" />
                 
-                <x-form.textarea name="excerpt" />
+                <x-form.textarea name="excerpt" value=" {{ old('excerpt') }}"/>
 
-                <x-form.textarea name="body" />
+                <x-form.textarea name="body" value=" {{ old('body') }}" />
 
                 <x-form.field>
                     <x-form.label name="category" />

@@ -12,7 +12,7 @@ class AdminController extends Controller
     {
         return view('admin.posts.index', [
 
-            'posts' => Post::paginate(10)
+            'posts' => Post::orderByDesc('created_at')->paginate(10)
         ]);
     }
 
@@ -39,7 +39,7 @@ class AdminController extends Controller
 
     public function update(Post $post)
     {
-
+        
         $attribute = $this->validatePost($post);
 
         if ($attribute['thumbnail'] ?? false) {
@@ -48,7 +48,7 @@ class AdminController extends Controller
         
         $post->update($attribute);
 
-        return back()->with('success', 'Post updated!');
+        return redirect('/admin/posts')->with('success', 'Post updated!');
     }
 
     public function destroy(Post $post)
@@ -70,7 +70,8 @@ class AdminController extends Controller
             'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post)],
             'excerpt' => 'required',
             'body' => 'required',
-            'category_id' => ['required', Rule::exists('categories', 'id')]
+            'category_id' => ['required', Rule::exists('categories', 'id')],
+            'status' => 'required'
         ]);
     }
 

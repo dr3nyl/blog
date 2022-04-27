@@ -7,7 +7,18 @@
                 <x-form.input name="title" :value="old('title', $post->title)" />
 
                 <x-form.input name="slug" :value="old('slug', $post->slug)" />
-                
+
+                <x-form.field>
+                    <x-form.label name="status" />
+
+                    <select name="status" id="status">
+                        <option value="Draft" {{ old('status', $post->status) == 'Draft' ? 'selected' : '' }} >Draft</option>
+                        <option value="Published" {{ old('status', $post->status) == 'Published' ? 'selected' : '' }}>Published</option>
+                    </select>
+
+                    <x-form.error name="status"/>
+                </x-form.field>
+
                 <div class="flex mt-6">
 
                     <div class="flex-1">

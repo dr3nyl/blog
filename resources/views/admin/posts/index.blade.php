@@ -13,6 +13,13 @@
                                         </th>
                                     </tr>
                                 </thead>
+
+                                <!-- for toggle -->
+                                <!-- <div x-data="{ show: false}">
+                                                <button  class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-green-80"
+                                                  @click="show = !show" :aria-expanded="show ? 'true' : 'false'" :class="{ 'bg-green-100': show }" x-text="show ? 'Published' : 'Draft'"></button>
+                                </div> -->
+
                                 @foreach ($posts as $post)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
@@ -26,9 +33,19 @@
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-wrap">
-                                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-80">
-                                                Published
-                                            </span>
+                                            @if($post->status == 'Published')
+
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-80">
+                                                    {{ $post->status }}
+                                                </span>
+
+                                            @else
+
+                                                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-80">
+                                                    {{ $post->status }}
+                                                </span>
+
+                                            @endif
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
