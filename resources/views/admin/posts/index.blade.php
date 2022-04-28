@@ -9,7 +9,10 @@
                                 <thead class="bg-gray-20">
                                     <tr>
                                         <th class="px-6 py-3 text-left text-md font-medium text-gray-500 uppercase tracking-wider">
-                                            Posts
+                                            Title
+                                        </th>
+                                        <th class="px-6 py-3 text-left text-md font-medium text-gray-500 uppercase tracking-wider">
+                                            Status
                                         </th>
                                     </tr>
                                 </thead>
@@ -31,7 +34,6 @@
                                                 </div>
                                             </div>
                                         </td>
-
                                         <td class="px-6 py-4 whitespace-wrap">
                                             @if($post->status == 'Published')
 
