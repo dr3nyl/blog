@@ -1,6 +1,6 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
     <h1 class="text-4xl">
-        Latest <span class="text-blue-500">Bulong</span> News
+        Latest <span class="text-blue-500"></span> News
     </h1>
 
     <div class="space-y-2 lg:space-y-0 lg:space-x-4 mt-4">
@@ -42,12 +42,17 @@
                 
                 @endif
                 
-                <input type="text" 
-                        name="search" 
-                        placeholder="Find something"
-                        class="bg-transparent placeholder-black font-semibold text-sm"
-                        value=" {{ request('search') }}"
-                        >
+                    <input type="text" 
+                            name="search" 
+                            placeholder="Find something"    
+                            class="bg-transparent placeholder-black font-semibold text-sm"
+                            
+                            @if(request('search')) 
+                                value=" {{ request('search') }}"
+                             @else
+                                value=""
+                            @endif
+                     >
             </form>
         </div>
     </div>

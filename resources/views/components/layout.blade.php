@@ -1,6 +1,6 @@
 <!doctype html>
 
-<title>Lokaj Blog</title>
+<title>My Blog</title>
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/phub.png" alt="Laracasts Logo" width="150" height="12" class="rounded-md">
+                    <!-- <img src="/images/logo.svg" alt="Laracasts Logo" width="150" height="12" class="rounded-md"> -->
                 </a>
             </div>
 

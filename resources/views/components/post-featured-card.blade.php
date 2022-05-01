@@ -19,9 +19,19 @@
                         </h1>
                     </a>
 
-                    <span class="mt-2 block text-gray-400 text-xs">
-                            Published <time> {{ $post->created_at->diffForHumans(); }}</time>
+                    <div class="flex items-center">
+                        <span class="mt-2 block text-gray-400 text-xs mr-4">
+                                Published <time> {{ $post->created_at->diffForHumans(); }}</time>
                         </span>
+
+                        <span class="mt-2 block text-gray-400 text-xs mr-4">
+                            {{ $post->view_count }}  {{ Str::plural('view', $post->view_count )}}
+                        </span>
+
+                        <span class="mt-2 block text-gray-400 text-xs">
+                        {{ $post->comments()->count() }}  {{ Str::plural('comment', $post->comments()->count() )}}
+                        </span>
+                    </div>
                 </div>
             </header>
 

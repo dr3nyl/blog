@@ -38,7 +38,6 @@
                     <x-form.error name="author"/>
                 </x-form.field>
 
-
                 <x-form.field>
                     <x-form.label name="status" />
 
