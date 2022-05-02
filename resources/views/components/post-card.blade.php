@@ -30,7 +30,7 @@
                         {{ $post->comments()->count() }}  {{ Str::plural('comment', $post->comments()->count() )}}
                         </span>
                     </div>
-                    
+
                 </div>
             </header>
 
@@ -43,9 +43,37 @@
             <footer class="flex justify-between items-center mt-8">
                 <div class="flex items-center text-sm">
                     <img src="/images/lary-avatar.svg" alt="Lary avatar">
-                    <div class="ml-3">
+
+                    <div class="ml-3 mr-2">
                         <a href="/?author={{ $post->author->username }}"> <h5 class="font-bold"> {{ $post->author->name }}</h5> </a>
                     </div>
+                        
+                    @auth
+
+                        @if (!$post->author->followedBy(auth()->user()))
+
+                            <form action="follow" method="post">
+                                @csrf
+
+                                <x-category-button name="Follow" :post="$post"></x-category-button>
+
+                                <input type="hidden" name="follower_id" value="{{ auth()->id() }}">
+                            </form>
+                            
+                        @else
+
+                            <form method="POST" action="follow/{{ $post->author->follows[0]->id }}">
+                                @csrf
+                                @method('DELETE')
+
+                                <x-category-button name="Unfollow" :post="$post"></x-category-button>
+
+                            </form>
+
+                        @endif
+
+                    @endauth
+
                 </div>
 
                 <div>

@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FollowController;
 use App\Http\Controllers\NewsLetterController;
 use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Models\Category;
+use App\Models\Follow;
 use App\Models\Post;
 use App\Models\User;
 use App\Services\Newsletter;
@@ -35,6 +37,9 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store'])->middleware('auth');
 
 Route::post('logout', [SessionController::class, 'destroy'])->middleware('auth');
+
+Route::post('follow', [FollowController::class, 'store'])->middleware('auth');
+Route::delete('follow/{follow}', [FollowController::class, 'destroy'])->middleware('auth');
 
 Route::middleware(['guest'])->group( function(){    
 
