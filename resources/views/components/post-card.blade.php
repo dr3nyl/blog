@@ -47,7 +47,6 @@
                     <div class="ml-3 mr-2">
                         <a href="/?author={{ $post->author->username }}"> <h5 class="font-bold"> {{ $post->author->name }}</h5> </a>
                     </div>
-                        
                     @auth
 
                         @if (!$post->author->followedBy(auth()->user()))

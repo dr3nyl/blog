@@ -16,7 +16,7 @@ class FollowController extends Controller
     {   
 
        $attributes = request()->validate([
-            'user_id' => ['required', ValidationRule::unique('follows', 'user_id')],
+            'user_id' => ['required'],
             'follower_id' => ['required']
         ]);
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\NewsLetterController;
 use App\Http\Controllers\PostCommentsController;
@@ -11,6 +12,7 @@ use App\Models\Category;
 use App\Models\Follow;
 use App\Models\Post;
 use App\Models\User;
+use App\Services\EmailNotification;
 use App\Services\Newsletter;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
