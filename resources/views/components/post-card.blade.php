@@ -13,9 +13,11 @@
                 </div>
 
                 <div class="mt-4">
-                    <h1 class="text-3xl">
-                        {{ $post->title }}
-                    </h1>
+                    <a class="hover:underline" href="/posts/{{ $post->slug }}">
+                        <h1 class="text-3xl">
+                            {{ $post->title }}
+                        </h1>
+                    </a>
 
                     <div class="flex items-center">
                         <span class="mt-2 block text-gray-400 text-xs mr-4">

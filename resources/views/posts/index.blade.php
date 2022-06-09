@@ -2,7 +2,7 @@
 
         @include('posts._header')
 
-        <div class="flex">
+        <div class="flex mb-12">
             
 
             <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
@@ -23,7 +23,7 @@
 
             <div class="flex flex-col h-auto mr-10">
 
-                <div class="flex flex-col bg-gray-100 pb-6 max-w-xs text-center font-mono border rounded-lg">
+                <!-- <div class="flex flex-col bg-gray-100 pb-6 max-w-xs text-center font-mono border rounded-lg">
                     <div class="bg-red-200 p-3">
                         <h1 class="text-normal text-lg ">Insert Image here  </h1>
                     </div>
@@ -36,9 +36,9 @@
                                             I created this site to be a repository of my mental soundbites. Hopefully, I am able to impart a little bit of knowledge about tech, web development, gaming, career and life in general to my readers through this site.
                         </span>
                     </div>
-                </div>
+                </div> -->
 
-                    <div class="flex flex-col max-w-xs text-center font-mono border rounded-lg mt-5">
+                    <div class="flex flex-col w-72 text-center font-mono border rounded-lg mt-5">
                         <div class="bg-blue-200 p-3">
                             <h1 class="text-normal text-lg ">Latest Articles from <strong>{{ ucfirst($articleTitle) }}</strong> </h1>
                         </div>
@@ -57,7 +57,6 @@
 
                                     <li class="mb-4 text-blue-500 hover:text-blue-700 text-justify">
                                         <a href="{{ $article->url }}" target="_blank">{{ $article->title }}</a> 
-                                        <span class="text-gray-500 italic"> by {{ $article->author }} of <strong>{{ $article->source->name }}</strong></span>
                                     </li>
 
                                 @endforeach

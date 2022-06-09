@@ -11,17 +11,23 @@
     {
         scroll-behavior: smooth;
     }
+
+    html, body{
+
+        height: 100%;
+    }
 </style>
+
 <body style="font-family: Open Sans, sans-serif">
 
-    <section class="">
+    <section class="flex flex-col h-full py-6">
 
         @include('nav')
 
          {{ $slot }}
+    
 
-    </section>
-        <footer id="newsletter" class="bg-blue-100 border border-black border-opacity-5 mt-16">
+        <footer id="newsletter" class="bg-blue-100 border border-black border-opacity-5 mt-auto">
 
         <!-- <div class=" py-16 px-10">
             <h5 class="text-3xl">Stay in touch with the latest posts</h5>
@@ -64,6 +70,8 @@
         </div>
 
         </footer>
+    </section>
+        
 
     <x-flash></x-flash>
 </body>

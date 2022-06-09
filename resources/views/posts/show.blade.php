@@ -71,7 +71,7 @@
                     </div>
                 </div> -->
 
-                <section class="col-span-12 mt-10 space-y-6">
+                <section class="col-span-12 mt-10 space-y-6 mb-12">
                 
                 @auth
                     <x-panel>
