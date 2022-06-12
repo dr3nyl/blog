@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/imgupload', function() {
+
+        dd(request()->file('file'));
+    // $imgpath = request()->file('file')->store('uploads', 'public');
+    // return response()->json(['location' => "/storage".$imgpath]);
+});
 
 Route::post('newsletter', NewsLetterController::class);
 

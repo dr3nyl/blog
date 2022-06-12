@@ -1,22 +1,27 @@
 <!doctype html>
 
 <title>My Blog</title>
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
-<style>
 
-    html
-    {
-        scroll-behavior: smooth;
-    }
+<head>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+    <style>
 
-    html, body{
+        html
+        {
+            scroll-behavior: smooth;
+        }
 
-        height: 100%;
-    }
-</style>
+        html, body{
+
+            height: 100%;
+        }
+    </style>
+
+</head>
 
 <body style="font-family: Open Sans, sans-serif">
 
@@ -63,7 +68,7 @@
             </div>
         </div> -->
 
-        <div class="flex justify-center py-16 px-10">
+        <div class="flex justify-center py-8 px-10">
             <span>github</span>
             <span>stackoverflow</span>
             <span>linkedn</span>
@@ -74,4 +79,11 @@
         
 
     <x-flash></x-flash>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#myeditorinstance' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 </body>

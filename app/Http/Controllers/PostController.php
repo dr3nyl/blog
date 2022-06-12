@@ -20,7 +20,7 @@ class PostController extends Controller
         
             'posts' => Post::latest()->where('status', 'Published')
                      ->filter(request(['search', 'category', 'author']))
-                     ->paginate(6)->withQueryString(), 
+                     ->simplePaginate(3)->withQueryString(), 
 
             'articles' => $articles->getArticles()->articles,  // added api news in home page
             
