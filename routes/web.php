@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('/imgupload', function() {
 
-        dd(request()->file('file'));
-    // $imgpath = request()->file('file')->store('uploads', 'public');
-    // return response()->json(['location' => "/storage".$imgpath]);
+    $imgpath = request()->file('file')->store('postimgs'); 
+    return response()->json(['location' => "/storage/$imgpath"]);
+   
 });
 
 Route::post('newsletter', NewsLetterController::class);
