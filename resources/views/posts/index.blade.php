@@ -2,7 +2,7 @@
 
         @include('posts._header')
 
-        <div class="flex mb-12">
+        <div class="flex mb-12 py-12">
             
 
             <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
