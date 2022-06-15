@@ -32,7 +32,7 @@ class AdminController extends Controller
 
         // $email = new EmailNotification(auth()->user()->email);
         // dd($email);
-        return redirect('/');
+        return redirect('/')->with('success', 'Post created!');
     }
 
     public function edit(Post $post)
