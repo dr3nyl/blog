@@ -71,7 +71,7 @@
                         </table>
                     @else
 
-                        <h2>No post yet. Create now!</h2>
+                        <h2 class="text-center text-xl">No post yet. Create now!</h2>
 
                     @endif
                     </div>
