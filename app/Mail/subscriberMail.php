@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class FollowMail extends Mailable
+class subscriberMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,12 +16,9 @@ class FollowMail extends Mailable
      *
      * @return void
      */
-
-    private $sender;
-
-    public function __construct($sender)
+    public function __construct()
     {
-        $this->sender = $sender;
+        //
     }
 
     /**
@@ -31,6 +28,6 @@ class FollowMail extends Mailable
      */
     public function build()
     {
-        return $this->from($this->sender)->view('mail.follow-template');
+        return $this->markdown('emails.welcome');
     }
 }

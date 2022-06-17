@@ -51,15 +51,18 @@
                     </div>
                     @auth
 
+                        {{-- @livewire('follow-button', ['post' => $post]) --}}
                         @if (!$post->author->followedBy(auth()->user()))
 
-                            <form action="follow" method="post">
+                             <form action="follow" method="post">
                                 @csrf
 
                                 <x-category-button name="Follow" :post="$post"></x-category-button>
 
                                 <input type="hidden" name="follower_id" value="{{ auth()->id() }}">
-                            </form>
+                                <input type="hidden" name="author_name" value="{{ $post->author->name }}">
+                            </form> 
+                            
                             
                         @else
 
@@ -71,7 +74,7 @@
 
                             </form>
 
-                        @endif
+                        @endif 
 
                     @endauth
 

@@ -6,7 +6,6 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
     <script
         type="text/javascript"
         src='https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js'
@@ -23,7 +22,14 @@
 
             height: 100%;
         }
+
+        [x-cloak] { 
+            display: none !important;
+        }
+
     </style>
+
+    @livewireStyles
 
 </head>
 
@@ -84,4 +90,7 @@
     <x-notification></x-notification>
 
     <script src="{{ asset('js/tinymce.js') }}"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js"></script>
+    @livewireScripts
+    
 </body>

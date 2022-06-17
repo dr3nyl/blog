@@ -7,6 +7,8 @@ use App\Http\Controllers\PostCommentsController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
+use App\Mail\subscriberMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,4 +57,12 @@ Route::middleware(['can:admin'])->group( function(){
     Route::get('/admin/posts/{post}/edit', [AdminController::class, 'edit']);
     Route::patch('/admin/posts/{post}', [AdminController::class, 'update']);
     Route::delete('/admin/posts/{post}', [AdminController::class, 'destroy']);
+});
+
+
+Route::get('/sendmail', function(){
+    
+    Mail::to('drenyltobi@gmail.com')->send(new subscriberMail);
+
+    //return new subscriberMail();
 });

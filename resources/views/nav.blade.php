@@ -10,7 +10,7 @@
             </div>
 
             <!-- Secondary Navbar items -->
-            <div class="hidden md:flex items-center space-x-3 ">
+            <div class="md:flex items-center space-x-3 ">
                     @auth
                     <x-dropdown>
                         <x-slot name="trigger">
@@ -38,7 +38,7 @@
                 </a> -->
             </div>
             <!-- Mobile menu button -->
-            <div class="md:hidden flex items-center">
+            {{-- <div class="md:hidden flex items-center">
                 <button class="outline-none mobile-menu-button">
                 <svg class=" w-6 h-6 hover:text-blue-500 "
                     x-show="!showMenu"
@@ -52,7 +52,7 @@
                     <path d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
-            </div>
+            </div> --}}
 
     </div>
 </nav>

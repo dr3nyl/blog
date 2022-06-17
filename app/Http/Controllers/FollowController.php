@@ -14,7 +14,7 @@ class FollowController extends Controller
     
     public function store(Request $request)
     {   
-
+  
        $attributes = request()->validate([
             'user_id' => ['required'],
             'follower_id' => ['required']
@@ -25,7 +25,7 @@ class FollowController extends Controller
             'follower_id' => auth()->id()
         ]);
         
-        return back()->with('success', 'Followed');
+        return back()->with('success', 'You followed '. $request->author_name.'!');
     }
 
     public function destroy(Follow $follow)

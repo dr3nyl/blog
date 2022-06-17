@@ -25,7 +25,7 @@ class EmailNotification{
         
         foreach ($collection as $key => $this->recipient) {
 
-            Mail::to($this->recipient['email'])->send(new FollowMail($this->sender));
+          //  Mail::to($this->recipient['email'])->send(new FollowMail($this->sender));
             
         }
  
