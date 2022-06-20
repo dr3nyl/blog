@@ -21,50 +21,63 @@
 
             </main>
 
-            <div class="flex flex-col h-auto mr-10">
+            <div class="flex flex-col h-auto mr-10 py-12">
 
-                <!-- <div class="flex flex-col bg-gray-100 pb-6 max-w-xs text-center font-mono border rounded-lg">
-                    <div class="bg-red-200 p-3">
-                        <h1 class="text-normal text-lg ">Insert Image here  </h1>
+                <div class="flex flex-col w-72 text-center font-mono border rounded-lg mt-5">
+                    <div class="bg-blue-200 p-3">
+                        <h1 class="text-normal text-lg ">Latest Articles from <strong>{{ ucfirst($articleTitle) }}</strong> </h1>
                     </div>
 
-                    <div class="bg-yellow-200 content-center px-7 py-4">
 
-                        <h1 class="font-bold text-md mb-3">Drenyl Pomarejo</h1>
-                        <span class="text-sm">I am a Full Stack Web Developer from the Philippines trying to make the world a better place using Laravel, VueJS and a little bit of Tailwind CSS. I also love playing video games during my free time.
+                    <div class=" content-center px-7 py-4">
+                        <ul class="text-xs">
 
-                                            I created this site to be a repository of my mental soundbites. Hopefully, I am able to impart a little bit of knowledge about tech, web development, gaming, career and life in general to my readers through this site.
-                        </span>
+                            @foreach($articles as $article)
+
+                                @if($loop->iteration == 11)
+
+                                    @break
+
+                                @endif
+
+                                <li class="mb-4 text-blue-500 hover:text-blue-700 text-justify">
+                                    <a href="{{ $article->url }}" target="_blank">{{ $article->title }}</a> 
+                                </li>
+
+                            @endforeach
+
+                        </ul>
+                    
                     </div>
-                </div> -->
+                </div>
 
-                    <div class="flex flex-col w-72 text-center font-mono border rounded-lg mt-5">
-                        <div class="bg-blue-200 p-3">
-                            <h1 class="text-normal text-lg ">Latest Articles from <strong>{{ ucfirst($articleTitle) }}</strong> </h1>
-                        </div>
-
-
-                        <div class=" content-center px-7 py-4">
-                            <ul class="text-xs">
-
-                                @foreach($articles as $article)
-
-                                    @if($loop->iteration == 11)
-
-                                        @break
-
-                                    @endif
-
-                                    <li class="mb-4 text-blue-500 hover:text-blue-700 text-justify">
-                                        <a href="{{ $article->url }}" target="_blank">{{ $article->title }}</a> 
-                                    </li>
-
-                                @endforeach
-
-                            </ul>
-                        
-                        </div>
+                <div class="flex flex-col w-72 text-center font-mono border rounded-lg mt-5">
+                    <div class="bg-blue-200 p-3">
+                        <h1 class="text-normal text-lg ">My Bookmark</strong> </h1>
                     </div>
+
+
+                    <div class=" content-center px-7 py-4">
+                        <!-- <ul class="text-xs">
+
+                            @foreach($articles as $article)
+
+                                @if($loop->iteration == 11)
+
+                                    @break
+
+                                @endif
+
+                                <li class="mb-4 text-blue-500 hover:text-blue-700 text-justify">
+                                    <a href="{{ $article->url }}" target="_blank">{{ $article->title }}</a> 
+                                </li>
+
+                            @endforeach
+
+                        </ul> -->
+                    
+                    </div>
+                </div>
 
             </div>
 

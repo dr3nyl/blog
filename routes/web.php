@@ -8,6 +8,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Mail\subscriberMail;
+use App\Services\EmailNotification;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('/imgupload', function() {
 
-    $imgpath = request()->file('file')->store('postimgs'); 
+    $imgpath = request()->file('file')->store('postimgs');
     return response()->json(['location' => "/storage/$imgpath"]);
    
 });
@@ -62,7 +63,9 @@ Route::middleware(['can:admin'])->group( function(){
 
 Route::get('/sendmail', function(){
     
-    Mail::to('drenyltobi@gmail.com')->send(new subscriberMail);
+    $test = new EmailNotification('drenyltobi@gmail.com');
+    $test->sendEmail();
+   // Mail::to('drenyltobi@gmail.com')->send(new subscriberMail);
 
     //return new subscriberMail();
 });

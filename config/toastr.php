@@ -24,5 +24,7 @@ return array(
     */
 
     'options' => array(
+        'positionClass' => 'toast-bottom-right',
+        'progressBar'   => false
     ),
 );

@@ -13,13 +13,14 @@ class FollowButton extends Component
     public $isFollowed;
     public Post $post;
     public Follow $follow;
-    public $txt;
 
+    public $checkIfFollowed;
     public function mount(){
 
         $this->postAuthorId = $this->post->author->id;
         $this->authorName = $this->post->author->name;
-        $this->isFollowed = (bool) $this->post->author->followedBy(auth()->user());
+        
+        $this->checkIfFollowed = $this->post->author->followedBy(auth()->user());
     }
 
     public function follow()
@@ -28,7 +29,9 @@ class FollowButton extends Component
         Follow::create([
             'user_id' => $this->postAuthorId,
             'follower_id' => auth()->id()
-        ]);;
+        ]);
+        $this->isFollowed = (bool) true;
+
 
         session()->flash('success', 'Followed' . $this->authorName);
 
@@ -36,8 +39,21 @@ class FollowButton extends Component
 
     public function unfollow()
     {
+        Follow::query()
+    ->where([
+        [
+            'user_id', '=', $this->postAuthorId,
+        ],
+        [
+            'follower_id', '=', auth()->id()
+        ]
+    ])
+    ->delete();
+        $this->isFollowed = (bool) false;
 
-        # code here..
+
+        session()->flash('success', 'Followed' . $this->authorName);
+
     }
 
     public function render()

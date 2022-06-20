@@ -32,7 +32,7 @@
 
                     </div>
 
-                    <div class="flex items-center lg:justify-between text-sm mt-4 mb-5">
+                    <div class="flex items-center lg:justify-between text-sm mt-4 mb-10">
                             <p class="mt-1 mr-5 block text-gray-400 text-xs">
                                 Published <time> {{ $post->created_at->diffForHumans() }}</time>
                             </p>
@@ -41,7 +41,6 @@
                                 <a href="/?author={{ $post->author->username }}"> <h5 class="font-bold"> {{ $post->author->name }}</h5> </a>
                             </div> -->
 
-                          
                             <x-category-button :category="$post->category"></x-category-button>
                      
                     </div>
@@ -79,7 +78,7 @@
                             @csrf
 
                             <header class="flex items-center">
-                                <img src="https://i.pravatar.cc/60?u={{ auth()->id() }}" alt="" width="50   " height="50" class="rounded-full">
+                                <img src="{{ asset('storage/' . auth()->user()->picture)}}" alt="" width="50   " height="50" class="rounded-full">
                                 <h2 class="ml-4">Want to participate?</h2>
                             </header>
 

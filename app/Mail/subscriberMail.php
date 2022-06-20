@@ -11,6 +11,7 @@ class subscriberMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $sender;
     /**
      * Create a new message instance.
      *
@@ -18,7 +19,7 @@ class subscriberMail extends Mailable
      */
     public function __construct()
     {
-        //
+
     }
 
     /**
@@ -28,6 +29,8 @@ class subscriberMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.welcome');
+        return $this->markdown('emails.welcome')
+                    ->subject("Drenyl's Blog Post!")
+                    ->from('drenyltobi@gmail.com');
     }
 }

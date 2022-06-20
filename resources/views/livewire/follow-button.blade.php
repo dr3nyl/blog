@@ -7,7 +7,7 @@
         value="">Follow
         </button> --}}
 
-        @if(!$isFollowed)
+        @if(!$isFollowed && !$checkIfFollowed)
 
             <button wire:click="follow" class="btn btn-default">
                 Follow
