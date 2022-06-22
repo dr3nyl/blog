@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class NewsApi {
 
     private $apiKey = '2b7a458491f3418185a9ccfe5f22133d';
-    public static $subject = 'tesla';
+    public static $subject = 'bitcoin';
     private $sortBy = 'publishedAt';
 
 

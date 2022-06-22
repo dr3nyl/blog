@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Mail;
 class EmailNotification{
 
 
-    private $sender;
+    private $emailsSent = array();
 
     public function __construct($sender)
     {
@@ -30,12 +30,14 @@ class EmailNotification{
 
             Mail::to($recipient['email'])->send(new subscriberMail());
 
-            
+            if (Mail::failures() != 0) {
+                array_push($this->emailsSent, $recipient['email']);
+            }
         }
 
-        if (Mail::failures() != 0) {
-            return "Email sent!";
-        }
+        return sizeof($this->emailsSent) ?? false;
+
+        
     }
 
 }

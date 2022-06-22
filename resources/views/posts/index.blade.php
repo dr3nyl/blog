@@ -23,9 +23,9 @@
 
             <div class="flex flex-col h-auto mr-10 py-12">
 
-                <div class="flex flex-col w-72 text-center font-mono border rounded-lg mt-5">
-                    <div class="bg-blue-200 p-3">
-                        <h1 class="text-normal text-lg ">Latest Articles from <strong>{{ ucfirst($articleTitle) }}</strong> </h1>
+                <div class="flex flex-col w-72 text-center border rounded-lg mt-5">
+                    <div class="bg-blue-400 p-3">
+                        <h1 class="text-normal text-lg text-white"><strong>{{ ucfirst($articleTitle) }}</strong> news today </h1>
                     </div>
 
 
@@ -51,9 +51,9 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col w-72 text-center font-mono border rounded-lg mt-5">
-                    <div class="bg-blue-200 p-3">
-                        <h1 class="text-normal text-lg ">My Bookmark</strong> </h1>
+                <div class="flex flex-col w-72 text-center border rounded-lg mt-5">
+                    <div class="bg-blue-400 p-3">
+                        <h1 class="text-normal text-lg text-white">My Bookmark</strong> </h1>
                     </div>
 
 

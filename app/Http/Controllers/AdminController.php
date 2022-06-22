@@ -30,9 +30,10 @@ class AdminController extends Controller
                     'thumbnail' => request()->file('thumbnail')->store('thumbnails')
                     ]));
 
-        // $email = new EmailNotification(auth()->user()->email);
-        // dd($email);
-        return redirect('/')->with('success', 'Post created!');
+        $mail = new EmailNotification('drenyltobi@gmail.com');
+        
+        return $mail->sendEmail() ? redirect('/')->with('success', 'Post created!') : redirect('/')->with('success', 'Post created but failed to send mails!');
+        
     }
 
     public function edit(Post $post)

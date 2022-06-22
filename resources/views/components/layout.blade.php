@@ -35,7 +35,7 @@
 @livewireStyles
 </head>
 
-<body style="font-family: Open Sans, sans-serif">
+<body class="font-sans">
 
     <section class="flex flex-col h-full mt-8">
 
@@ -44,7 +44,7 @@
          {{ $slot }}
     
 
-        <footer id="newsletter" class="bg-blue-100 border border-black border-opacity-5 mt-auto">
+        <footer id="newsletter" class="bg-blue-400 border border-black border-opacity-5 mt-auto">
 
             <!-- <div class=" py-16 px-10">
                 <h5 class="text-3xl">Stay in touch with the latest posts</h5>
@@ -80,15 +80,15 @@
                 </div>
             </div> -->
 
-        <div class="flex flex-col footer items-center mt-2 px-10 py-10">
-            <div class="mb-3">
-                <a href="https://github.com/dr3nyl" target="__blank"><i class="fab fa-2x fa-github px-2"></i></a>
-                <a href="https://stackoverflow.com/users/5304955/drenyl" target="__blank"><i class="fab fa-2x fa-stack-overflow px-2"></i></a>
-                <a href="https://www.linkedin.com/in/drenyl-pomarejo/" target="__blank"><i class="fab fa-2x fa-linkedin-in px-2"></i></a>
+        <div class="flex flex-col footer items-center mt-2 px-10 py-6">
+            <div class="mb-4">
+                <a href="https://github.com/dr3nyl" target="__blank"><i class="fab fa-2x fa-github px-3"></i></a>
+                <a href="https://stackoverflow.com/users/5304955/drenyl" target="__blank"><i class="fab fa-2x fa-stack-overflow px-3"></i></a>
+                <a href="https://www.linkedin.com/in/drenyl-pomarejo/" target="__blank"><i class="fab fa-2x fa-linkedin-in px-3"></i></a>
             </div>
             <div class="flex">
-                <div class="mr-3">Copyright &copy; {{ date('Y') }}</div>
-                <div>Drenyl Pomarejo</div>
+                <div class="">Copyright &copy; {{ date('Y') }}</div>
+
             </div>
         </div>
 
