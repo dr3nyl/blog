@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
     <style>
 
-        html
-        {
+        html{
             scroll-behavior: smooth;
         }
 
@@ -28,6 +27,10 @@
         /* prevent flickering of hidden elements from alpine */
         [x-cloak] { 
             display: none !important;
+        }
+
+        .fab{
+            color: white;
         }
 
     </style>
@@ -44,7 +47,7 @@
          {{ $slot }}
     
 
-        <footer id="newsletter" class="bg-blue-400 border border-black border-opacity-5 mt-auto">
+        <footer id="newsletter" class="bg-gray-900 border border-black border-opacity-5 mt-auto">
 
             <!-- <div class=" py-16 px-10">
                 <h5 class="text-3xl">Stay in touch with the latest posts</h5>
@@ -86,8 +89,8 @@
                 <a href="https://stackoverflow.com/users/5304955/drenyl" target="__blank"><i class="fab fa-2x fa-stack-overflow px-3"></i></a>
                 <a href="https://www.linkedin.com/in/drenyl-pomarejo/" target="__blank"><i class="fab fa-2x fa-linkedin-in px-3"></i></a>
             </div>
-            <div class="flex">
-                <div class="">Copyright &copy; {{ date('Y') }}</div>
+            <div class="flex text-white">
+                <div class="text-xl">Copyright {{ date('Y') }}. All rights reserved</div>
 
             </div>
         </div>

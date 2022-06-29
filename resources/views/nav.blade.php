@@ -5,7 +5,7 @@
 
             <div class="flex items-center">
                         <!-- Website Logo -->
-                        <a href="/" class="text-4xl"><h1><span class="text-blue-500 font-medium">drenyl</span>pomarejo</h1></a>
+                        <a href="/" class="text-4xl"><h1><span class="text-blue-500 font-medium">d</span>p</h1></a>
             </div>
         </div>
 
