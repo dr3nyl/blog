@@ -37,7 +37,7 @@
                             </div>
 
                             <div class="body mb-7">
-                                <p class="mb-5">I am a Software Developer in the Philippines working on various projects. I enjoy coding as this is my daily task. If I am not sitting in my working area. You can find me in the gym or do hiking in the weekends!</p>
+                                <p class="mb-5">I am a Software Developer in the Philippines working on various projects. I enjoy coding, gaming, hiking, and lift some heavy weights</p>
                             </div>
 
                             <div class="footer">
