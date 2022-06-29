@@ -23,8 +23,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-$exitCode = Artisan::call('storage:link', [] );
-echo $exitCode; // 0 exit code for no errors.
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
 
 Route::post('newsletter', NewsLetterController::class);
 Route::get('/', [PostController::class, 'index']);
