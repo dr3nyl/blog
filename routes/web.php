@@ -9,6 +9,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionController;
 use App\Mail\subscriberMail;
 use App\Services\EmailNotification;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Artisan::call('storage:link', [] );
 
 Route::post('newsletter', NewsLetterController::class);
 Route::get('/', [PostController::class, 'index']);
