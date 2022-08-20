@@ -3,7 +3,7 @@
         Latest <span class="text-blue-500"></span> Post
     </h1>
 
-    <div class="flex lg:space-y-0 lg:space-x-4 mt-6">
+    <div class="flex space-y-0 space-x-4 mt-6">
         <!--  Category -->
         <div class=" py-1 bg-gray-100 rounded-xl">
 
