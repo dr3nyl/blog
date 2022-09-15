@@ -1,14 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Category;
-use App\Models\Comment;
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Services\NewsApi;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Validation\Rule;
+
 
 class PostController extends Controller
 {
