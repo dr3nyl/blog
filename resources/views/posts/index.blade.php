@@ -37,14 +37,14 @@
                             </div>
 
                             <div class="body mb-7">
-                                <p class="mb-5">I am a Software Developer in the Philippines working on various projects. I enjoy coding, gaming, hiking, and lift some heavy weights</p>
+                                <p class="mb-5">gcash #: 0995 8659692<insert</p>
                             </div>
 
                             <div class="footer">
                                 <form action="" method="post">
                                     @csrf
 
-                                    <button class="border-gray-400 border-2 rounded-md px-4 py-2 hover:bg-gray-900 hover:text-white transition duration-300" type="submit">Read more</button>
+                                    <button class="border-gray-400 border-2 rounded-md px-4 py-2 hover:bg-gray-900 hover:text-white transition duration-300 disable" type="submit" disabled>Read more</button>
                                 </form>
                             </div>
 
