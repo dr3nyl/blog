@@ -31,7 +31,7 @@
                     </form>
                 </x-dropdown>
             @else
-                <a href="/register" class="text-xl font-medium {{ request()->is('register') ? 'text-blue-500' : '' }}">Register</a>
+                <!-- <a href="/register" class="text-xl font-medium {{ request()->is('register') ? 'text-blue-500' : '' }}">Register</a> -->
                 <a href="/login" class="ml-6 text-xl font-medium  {{ request()->is('login') ? 'text-blue-500' : '' }}">Log In</a>
             @endauth
             
